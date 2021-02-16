@@ -1,0 +1,13 @@
+.img{
+    height: 300px;
+    width: 100%;
+}
+.flex{
+   
+    border-radius: 15px;
+}
+.flex:hover{
+    /*transform: rotate(0deg)*/
+    transform: scale(1.1,1.1);
+    
+}

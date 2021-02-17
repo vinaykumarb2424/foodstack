@@ -1,8 +1,6 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Container from '@material-ui/core/Container';
-import './Listing.css'
+import {Link} from 'react-router-dom';
+import './Listing.css';
 
 
 
@@ -15,6 +13,7 @@ const Listing = (props) =>{
       if(restaurantList.length>0){
         return restaurantList.map((item) =>{
           return(
+            <Link to={`/details/${item._id}`} className="text-decoration-none">
             <div className="row mr-5">
             <div className="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
             </div> 
@@ -37,7 +36,8 @@ const Listing = (props) =>{
 
                   </div>
               </div>
-           </div> 
+           </div>
+           </Link> 
 
           )
         }) 

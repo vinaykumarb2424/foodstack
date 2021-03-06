@@ -28,7 +28,8 @@ class HotelDetails extends Component {
                     <Signup />
                     <div className="container mt-5">
                       <div className="container-fluid">
-                   <div class="card mt-5">
+                   <div class="card mt-5" >
+                   <div className="card-header text-right text-capitalize text-white" style={{backgroundColor:'coral'}}>{details.name}</div>
                       <div className="card-block" >
                           <img className="card-img-top"  style={{height:'350px',width:'100%'}} src={details.thumb} alt={details.thumb}></img>
                       </div>
@@ -37,18 +38,21 @@ class HotelDetails extends Component {
                          <span>{details.locality} {details.city_name}</span>
                          <Tabs>
                          <TabList>
-                                <Tab>OverView</Tab>
+                                <Tab >OverView</Tab>
                                 <Tab>Contact</Tab>
                                 <Tab>Order Online</Tab>
                             </TabList>
                             <TabPanel>
-                                <h2>About This Place</h2>
+                               
                                 <p>{details.name} is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>
                             </TabPanel>
                             <TabPanel>
-                                <h2>Contact Us</h2>
-                                <h3>{details.address}</h3>
-                                <h3>Phone: 9655868686</h3>
+                                <div className="text-primary">
+                                    <span>Contact Us</span> <br />
+                                    <span>{details.address}</span>
+                                <span> Phone: 9655868686</span>
+                                </div>
+                                
                             </TabPanel>
                          </Tabs>
                      </div>

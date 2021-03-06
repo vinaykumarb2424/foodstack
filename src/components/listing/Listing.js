@@ -1,5 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import Header from '../Header';
+import Signup from '../Signup';
+import Footer from '../Footer';
+import CuisineFilter from '../filters/CuisineFilter';
 import './Listing.css';
 
 
@@ -14,29 +18,40 @@ const Listing = (props) =>{
         return restaurantList.map((item) =>{
           return(
             <Link to={`/details/${item._id}`} className="text-decoration-none">
-            <div className="row mr-5">
-            <div className="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
-            </div> 
-            <div className="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 mt-4">
-                 <div className="card">
+           
+                 <div className="card mb-5">
                       <div className="row">
                           <div className="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-4">
-                              <img className="img-fluid img" src={item.thumb} alt="{item.thumb}"></img>
+                              <img className="img-flui  rounded" style={{height:'250px',width:'250%'}} src={item.thumb} alt={item.thumb}></img>
 
                           </div>
-                          <div className="col-xl-10 col-lg-10 col-md-10 col-sm-8 col-8">
-                            <div clas="card-body">
-                                   <h4 className="card-title mt-3">{item.name}</h4>
-                                   <p>Rs.{item.cost} Per Two</p>
-                                    <p>{item.city_name}</p>
-                                   </div>
+                          <div className="col-xl-10 col-lg-10 col-md-10 col-sm-8 col-8 text-center pl-5">
+                            <div className="card-body">
+                                 <div className="card-title mt-0 text-center">
+                                   <h4 className="">{item.name}</h4>
+                                   
+                                   
+                                 </div>
+                                 <div>
+                                 <hr />
+                                 </div>
+                                 
+                              
+                                   
+                                  
+                                   <span className="card-title mt-3 ">Rs.{item.cost} Per Two</span>
+                                  <p className="card-title ">{item.city_name}</p>
+                            </div>
+                            {/* <div class="card-footer"></div>5f2917ad2616b72c387f  e73f9308190310e31b9778b5b1c5d4f51ac284b3 */}
+                                  
                           </div>
+                         
+                         
 
                       </div>
 
                   </div>
-              </div>
-           </div>
+              
            </Link> 
 
           )
@@ -45,7 +60,7 @@ const Listing = (props) =>{
             return(
               <div>
                   <center>
-                    <h2>No Data On This Filter</h2>
+                    <h2>No restaurants found</h2>
                 </center>
               </div>
         )
@@ -63,12 +78,10 @@ const Listing = (props) =>{
     
   }
     return(
-       
-       <div className="container">
-           {renderList(props)}
-      </div>
-                          
 
+               <div>
+                  {renderList(props)}      
+              </div>
     )
 }
 export default  Listing ;

@@ -1,7 +1,6 @@
 
 import React from 'react';
 import './QuickSearch.css';
-import CircularProgress from '@material-ui/core/CircularProgress';
 import {Link} from 'react-router-dom';
 
 
@@ -68,15 +67,9 @@ const QuickSearch = (props) =>{
       }
     }else{
       return(
-        <div className="align-items-center ">
-            
-            <center>
-   
-               <CircularProgress color="secondary" />
-            </center>
-               
-        </div>
-       
+        
+            <div className="spinner-border text-dark p-4 ml-5" style={{left:'50%', marginLeft:'70%'}}></div>
+
       )
     }
   }

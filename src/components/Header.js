@@ -13,7 +13,7 @@ const Header =(props) => {
                          <Link className="navbar-brand text-white" to="/home">Foodstack </ Link>
                             
                              
-                             <button type="button" style={{float:'white'}} className="navbar-toggler ml-xs-auto" data-toggle="collapse" data-target="#close">
+                             <button type="button" style={{float:'right'}} className="navbar-toggler ml-xs-auto" data-toggle="collapse" data-target="#close">
                                           <i className="fa fa-bars" aria-hidden="true"></i>                     
                                </button>
                                

@@ -1,6 +1,6 @@
-import React from "react";
-import { Component } from "react";
-import Select from '@material-ui/core/Select';
+import React from 'react';
+import { Component } from 'react';
+import {withRouter} from 'react-router-dom';
 import './Search.css';
 
 const url="https://api-foodstack.herokuapp.com/city";
@@ -50,6 +50,12 @@ class Search extends Component{
             this.setState({restaurant:data})
         })
     }
+    handleRestaurant=(event)=>{
+        this.props.history.push(`/details/${event.target.value}`)
+       
+        
+    }
+
 
 
     render(){
@@ -87,7 +93,7 @@ class Search extends Component{
                         </div>
                         <div className="col-xl-7 col-lg-7 col-md-6 col-sm-6 col-6">
                    
-                               <select className="form-control">
+                               <select className="form-control" onChange={this.handleRestaurant}>
                                <option>Select restaurant</option>
                                  {this.renderRestaurant(this.state.restaurant)}
                               </select>
@@ -115,4 +121,4 @@ class Search extends Component{
     }
 
 }
-export default Search;
+export default withRouter(Search);

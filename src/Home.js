@@ -8,7 +8,7 @@ import QuickSearchApi from './components/QuickSearchApi';
 import Signup from './components/Signup';
 import Listing from './components/listing/Listing';
 
-function Home() {
+const Home=(props) =>{
   return (
 
    

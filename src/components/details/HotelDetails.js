@@ -1,4 +1,5 @@
 import { Component } from "react"
+import {Link} from 'react-router-dom'
 import React from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
@@ -55,6 +56,8 @@ class HotelDetails extends Component {
                                 
                             </TabPanel>
                          </Tabs>
+                         <Link to='/' className='btn btn-danger'> back</Link>;
+                        <Link to={`/placeorder/${details.name}`} className='btn btn-success'> proceed order</Link>
                      </div>
                   </div>
               </div>
@@ -82,7 +85,7 @@ class HotelDetails extends Component {
 
         const hotelId= this.props.match.params.id;
         axios.get(`${url}/${hotelId}`)
-    .then((res) => {this.setState({details:res.data[0]})})
+    .then((restaurant) => {this.setState({details:restaurant.data[0]})})
 
     }
 }

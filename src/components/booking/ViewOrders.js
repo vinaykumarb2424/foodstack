@@ -4,19 +4,20 @@ import Signup from '../Signup';
 import Footer from '../Footer';
 
 const ViewOrders = (props) => {
-    const renderTable = ({bookdata}) => {
-        if(bookdata){
-            return bookdata.map((item) => {
+    const renderTable = ({orders}) => {
+     
+        if(orders){
+            return orders.map((item) => {
                 /*if(useranem==item.name){*/
                     return(
                         
                     
                         <tr>
                             <td>{item._id}</td>
-                            <td>{item.rest_id}</td>
+                            <td>{item.hotel_name}</td>
                             <td>{item.name}</td>
                             <td>{item.phone}</td>
-                            <td>{item.address}</td>
+                          
                         </tr>
                     )    
                 /*}*/
@@ -32,20 +33,17 @@ const ViewOrders = (props) => {
                       <div className="body pt-5">
                       <div className="container mt-2 pt-5">
                          <div className="container-fluid">
-                            {/* <div className="card">
-                               <div className="card-header text-center bg-secondary text-white">Orders List</div>
-                                <div className="card-body"> */}
                                 <table class="table table-dak table-hover">
                                     <thead className="thead-dark">
                                        <tr className="pl-">
-                                            <th>OrderId</th>
-                                            <th>Email</th>
+                                            <th>Order Id</th>
+                                            <th>Restaurant</th>
+                                            <th>Name</th>
                                             <th>Mobile</th>
-                                            <th>Address</th>
                                       </tr>
                                     </thead>
                                     <tbody>
-                                       <tr>
+                                       {/* <tr>
                                         <td>John</td>
                                         <td>Doe</td>
                                         <td>Doe</td>
@@ -73,7 +71,8 @@ const ViewOrders = (props) => {
         <td>july@example.com</td>
         <td>Moe</td>
        
-      </tr>
+      </tr> */}
+       {renderTable(props)}
     </tbody>
   </table>
   <ul class="pagination float-right">
@@ -90,8 +89,7 @@ const ViewOrders = (props) => {
                 
      </div>
                         
-                    {/* </div>
-                      </div> */}
+                    
                    </div>
                    <div className="footer">
                        <Footer />

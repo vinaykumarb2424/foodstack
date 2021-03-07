@@ -68,8 +68,7 @@ const QuickSearch = (props) =>{
     }else{
       return(
         
-                        <div className="spinner-border text-dark p-4 " style={{marginTop:'20%', marginLeft:'50%'}}></div>
-
+            <div className="spinner-border text-dark p-4 " style={{marginTop:'20%', marginLeft:'50%'}}></div>
 
       )
     }

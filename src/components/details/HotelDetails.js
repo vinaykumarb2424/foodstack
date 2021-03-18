@@ -4,7 +4,6 @@ import React from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
 import Signup from '../Signup';
-import CurrencyConverter from '../Currencyconverter/CurrencyConverterApi';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import axios from 'axios'
@@ -29,12 +28,12 @@ class HotelDetails extends Component {
                     <Signup />
                     <div className="container mt-5">
                       <div className="container-fluid">
-                   <div class="card mt-5" >
+                   <div className="card mt-5" >
                    <div className="card-header text-right text-capitalize text-white" style={{backgroundColor:'coral'}}>{details.name}</div>
                       <div className="card-block" >
                           <img className="card-img-top"  style={{height:'350px',width:'100%'}} src={details.thumb} alt={details.thumb}></img>
                       </div>
-                      <div class="card-body">
+                      <div className="card-body">
                          <h4>{details.name}</h4>
                          <span>{details.locality} {details.city_name}</span>
                          <Tabs>

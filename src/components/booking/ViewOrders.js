@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from '../Header';
-import Signup from '../Signup';
 import Footer from '../Footer';
 
 const ViewOrders = (props) => {
@@ -33,7 +32,7 @@ const ViewOrders = (props) => {
                       <div className="body pt-5">
                       <div className="container mt-2 pt-5">
                          <div className="container-fluid">
-                                <table class="table table-dak table-hover">
+                                <table className="table table-dak table-hover">
                                     <thead className="thead-dark">
                                        <tr className="pl-">
                                             <th>Order Id</th>
@@ -43,44 +42,16 @@ const ViewOrders = (props) => {
                                       </tr>
                                     </thead>
                                     <tbody>
-                                       {/* <tr>
-                                        <td>John</td>
-                                        <td>Doe</td>
-                                        <td>Doe</td>
-                                        <td>8897399952</td>
                                        
-                                        
-                                       </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-        <td>Moe</td>
-        
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-        <td>Moe</td>
-       
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-        <td>Moe</td>
-       
-      </tr> */}
        {renderTable(props)}
     </tbody>
   </table>
-  <ul class="pagination float-right">
-    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item active"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  <ul className="pagination float-right">
+    <li className="page-item"><a className="page-link" href="#">Previous</a></li>
+    <li className="page-item"><a className="page-link" href="#">1</a></li>
+    <li className="page-item active"><a className="page-link" href="#">2</a></li>
+    <li className="page-item"><a className="page-link" href="#">3</a></li>
+    <li className="page-item"><a className="page-link" href="#">Next</a></li>
   </ul>
                                 </div>
                  

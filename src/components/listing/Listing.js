@@ -1,9 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Header from '../Header';
-import Signup from '../Signup';
-import Footer from '../Footer';
-import CuisineFilter from '../filters/CuisineFilter';
 import './Listing.css';
 
 

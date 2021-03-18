@@ -1,8 +1,43 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
+import {withRouter} from 'react-router-dom';
+import { Component } from 'react';
 
-const Signup =(props) =>{
-    return(
+
+const url ="http://localhost:6700/users";
+
+class  Signup extends Component{
+
+    constructor(props){
+        super(props)
+
+
+        this.state={
+            userName:'',
+            userImg:''
+        }
+    }
+    conditionalButton =() =>{
+        console.log(sessionStorage.getItem('username'))
+        console.log(">>this,state",this.state)
+
+        if((sessionStorage.getItem('username') ==null)||  (sessionStorage.getItem('username') ==undefined)){
+          return(
+            <a href='https://github.com/login/oauth/authorize?client_id=5f2917ad2616b72c387f'>Login With Github</a>
+
+          )
+        }
+        else{
+            return(
+                <div>
+                     <img src={this.state.userImg} style={{height:100,width:100}}/>
+                    Hi {this.state.userName}
+                </div>
+            )
+        }
+    }
+    render(){
+        return(
         
         // container starts
         <div className="container">
@@ -54,8 +89,10 @@ const Signup =(props) =>{
                                         <button type="button" className="btn btn-info btn-block mt-5"> 
                                                 Create Account
                                         </button>
+                                        {this.conditionalButton()}
                                         </div>
                                         </center>
+                                        
                                         
                                         
                                         
@@ -81,5 +118,35 @@ const Signup =(props) =>{
         </div>
         // container ends
     )
+    
 }
-export default Signup;
+componentDidMount(){
+    const code = (this.props.location.search).split('=')[1];
+    if(code){
+        let requestData={
+            code:code
+        }
+        console.log("requestData>>>",requestData)
+        fetch(url, {
+        method:'POST',
+        headers:{
+            'Accept':'application/json',
+            'Content-Type':'application/json'
+        },
+        body:JSON.stringify(requestData)
+    })
+    .then((res) => res.json())
+    .then((data) => {
+        var user = data.login;
+        var img = data.avatar_url;
+        sessionStorage.setItem('username',user)
+        fetch(url,{method:'GET'})
+                .then((res) => res.json())
+                .then((data)=> this.setState({userName:user,imgUrl:img}))
+    
+            })
+    }
+    
+}
+}
+export default withRouter(Signup);

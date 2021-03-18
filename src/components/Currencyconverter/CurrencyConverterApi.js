@@ -1,12 +1,8 @@
-import React,{Component} from 'react';
-import QuickSearch from '../QuickSearch';
+import React from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
 import CurrencyConverter from '../Currencyconverter/CurrencyConveter';
 import Signup from '../Signup';
-
-const url = "https://api.exchangeratesapi.io/latest?base=";
-
 
 
     const CurrencyConverterApi = (props) =>{
@@ -28,14 +24,6 @@ const url = "https://api.exchangeratesapi.io/latest?base=";
         )
     
 
-    // componentDidMount(){
-    //     fetch(url,{method:'GET'})
-    //     .then((res) => res.json())
-    //     .then((data) => {
-    //         this.setState({currency:data})
-    //     })
-    // }
-    
 }
 
 export default CurrencyConverterApi;

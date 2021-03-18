@@ -1,10 +1,8 @@
 import React from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
 import Home from './Home';
-import Signup from './components/Signup';
 import Listing from './components/listing/ListingApi';
 import HotelDetails from './components/details/HotelDetails';
-import CurrencyConverter from './components/Currencyconverter/CurrencyConverterApi';
 import CurrencyConverterApi from './components/Currencyconverter/CurrencyConverterApi';
 import DisplayOrdersApi from './components/booking/DisplayOrdersApi';
 import PlaceOrder from './components/booking/PlaceOrder';

@@ -2,11 +2,9 @@
 import './Home.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Restaurant from './components/Restaurant';
 import Search from './components/Search';
 import QuickSearchApi from './components/QuickSearchApi';
 import Signup from './components/Signup';
-import Listing from './components/listing/Listing';
 
 const Home=(props) =>{
   return (
